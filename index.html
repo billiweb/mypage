@@ -57,7 +57,6 @@ p<!DOCTYPE html>
             border: none;
             margin: 0 0 30px 0;
             background-color: #0c445c;
-
             font-weight: bold;
             font-size: 16px;
             color: white;
@@ -75,35 +74,34 @@ p<!DOCTYPE html>
       </head>
     <body>
 
-          <div class="top">
-            
+          <div class="top">            
               <a href="https://spartacodingclub.kr/">
               <img class='sparta' src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free/logo_teamsparta.png" target = "_blank" width="100px"/>
               </a>  
-
-            <div class="logo"></div>
+              <div class="logo"></div>
               <h1 class="main">부엉s 산 정보</h1>
           </div>
 
           <div id="map" style="width:800px;height:600px; border-radius: 20px; margin: 50px auto 0 auto;"></div>
 
           <script>
-            var container = document.getElementById('map');
-            var options = {
-              center: new kakao.maps.LatLng(33.450701, 126.570667),
-              level: 3
-            };
-            //지도 생성 위치
-            var map = new kakao.maps.Map(container, options);
-            //마커 표시 위치
-            var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
-            // 마커를 생성합니다
-          var marker = new kakao.maps.Marker({
-              position: markerPosition
-          });
-          // 마커가 지도 위에 표시되도록 설정합니다
-          marker.setMap(map);   
+              var container = document.getElementById('map');
+              var options = {
+                center: new kakao.maps.LatLng(33.450701, 126.570667),
+                level: 5
+              };
+              //지도 생성 위치
+              var map = new kakao.maps.Map(container, options);
+              //마커 표시 위치
+              var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+              // 마커를 생성합니다
+              var marker = new kakao.maps.Marker({
+                  position: markerPosition
+              });
+              // 마커가 지도 위에 표시되도록 설정합니다
+              marker.setMap(map);   
           </script>
+
 
           <div class="bottom" >
               <details>
@@ -116,6 +114,6 @@ p<!DOCTYPE html>
                 <p class="location_name">제주도</p>
               </details>
           </div>
-
+          
     </body>
 </html>
