@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+p<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -15,18 +15,8 @@
           body {
             background-color: #16739b
           }
-          .logo {
-            width: 100px;
-            height: 100px;
 
-            background-image: url('owl.png');
-            background-position: center;
-            background-size: contain;
-
-            margin-top: 50px;
-          }
-
-          .wrap {
+          .top {
             width: 300px;
             margin: 0 auto 0 auto;
 
@@ -36,84 +26,97 @@
             align-items: center;
           }
 
+          .sparta {
+            margin: 20px 0 0 70px;
+          }
+
+          .logo {
+            width: 100px;
+            height: 100px;
+            background-image: url('owl.png');
+            background-position: center;
+            background-size: contain;
+            margin-top: 10px;
+          }
+
           .main {
             color: white;
           }
-
-          #map {
-            width: 500px;
-            height: 400px;
-          }
-
 
           .bottom {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-top: 70px;
+          }
+          
+          .button {
+            padding: 10px 70px 10px 70px;
+            border-radius: 20px;
+            border: none;
+            margin: 0 0 30px 0;
+            background-color: #0c445c;
 
-            margin-top: 100px;
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+            text-align: center;
           }
 
-
-          #map_v3 {
-          height:500px;
-          margin:0 auto;
-          width:800px;
-          max-width:100%;
-          margin-bottom:10px;
-
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-}
-
+          .location_name {
+            color: white;
+            margin: 10px 0px 10px 0px;
+            font-size: 16px;
+          }
 
         </style>
     
       </head>
     <body>
-        <div class="wrap">
 
-           <div class="logo"></div>
-            <h1 class="main">부엉s 산 정보</h1>
-            <button>버튼입니다.</button>
-           </div>
-
-
-           <div id="map" style="width:800px;height:600px; border-radius: 20px; margin: 100px auto 0 auto;"></div>
-
-           <script>
-             var container = document.getElementById('map');
-             var options = {
-               center: new kakao.maps.LatLng(33.450701, 126.570667),
-               level: 3
-             };
-
-             //지도 생성 위치
-             var map = new kakao.maps.Map(container, options);
-
-             //마커 표시 위치
-             var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
-
-             // 마커를 생성합니다
-            var marker = new kakao.maps.Marker({
-                position: markerPosition
-            });
-
-            // 마커가 지도 위에 표시되도록 설정합니다
-            marker.setMap(map);   
-
-           </script>
-
-
-            <div class="bottom"
+          <div class="top">
+            
               <a href="https://spartacodingclub.kr/">
               <img class='sparta' src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free/logo_teamsparta.png" target = "_blank" width="100px"/>
               </a>  
-            </div>
 
-          </div> 
+            <div class="logo"></div>
+              <h1 class="main">부엉s 산 정보</h1>
+          </div>
+
+          <div id="map" style="width:800px;height:600px; border-radius: 20px; margin: 50px auto 0 auto;"></div>
+
+          <script>
+            var container = document.getElementById('map');
+            var options = {
+              center: new kakao.maps.LatLng(33.450701, 126.570667),
+              level: 3
+            };
+            //지도 생성 위치
+            var map = new kakao.maps.Map(container, options);
+            //마커 표시 위치
+            var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+            // 마커를 생성합니다
+          var marker = new kakao.maps.Marker({
+              position: markerPosition
+          });
+          // 마커가 지도 위에 표시되도록 설정합니다
+          marker.setMap(map);   
+          </script>
+
+          <div class="bottom" >
+              <details>
+                <summary class="button">미세먼지 정보</summary>
+                <p class="location_name">서울/경기</p>
+                <p class="location_name">강원도</p>
+                <p class="location_name">경상도</p>
+                <p class="location_name">전라도</p>
+                <p class="location_name">충청도</p>
+                <p class="location_name">제주도</p>
+              </details>
+          </div>
+        
+        </div> 
     </body>
 </html>
