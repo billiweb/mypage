@@ -11,9 +11,7 @@
         <meta property="og:image" content="공유할 이미지" />
         <title>부엉s 산 정보</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@200;400;600&display=swap" rel="stylesheet">
+    
 
         </head>
 
@@ -53,6 +51,11 @@
             margin: 0 10px 0 10px;
           }
 
+          #map {
+            width: 500px;
+            height: 400px;
+          }
+
 
           .bottom {
             display: flex;
@@ -64,6 +67,13 @@
           }
 
 
+          #map_v3 {
+          height:500px;
+          margin:0 auto;
+          width:800px;
+          max-width:100%;
+          margin-bottom:10px;
+}
 
 
         </style>
@@ -82,6 +92,17 @@
            </div>
 
 
+           <div id="map" style="width:500px;height:400px;"></div>
+           <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=899f102084fa39680008a7c20cd23ee6"></script>
+           <script>
+             var container = document.getElementById('map');
+             var options = {
+               center: new kakao.maps.LatLng(33.450701, 126.570667),
+               level: 3
+             };
+         
+             var map = new kakao.maps.Map(container, options);
+           </script>
 
 
             <div class="bottom"
